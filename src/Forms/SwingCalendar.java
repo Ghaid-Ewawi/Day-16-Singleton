@@ -28,8 +28,16 @@ public class SwingCalendar extends JFrame {
     Calendar cal = new GregorianCalendar();
     JLabel label;
 
+    private static SwingCalendar instance;
+
+    public static SwingCalendar getInstance() {
+        if (instance == null)
+            instance = new SwingCalendar();
+        return instance;
+    }
+
     // Todo: Refactor this constructor so the program will create only one copy of this object
-    SwingCalendar() { // Constructor
+    private SwingCalendar() { // Constructor
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Swing Calendar");
